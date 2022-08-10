@@ -1,32 +1,32 @@
 CREATE SCHEMA quanlybanhang ;
 
 CREATE TABLE customer (
-  cID INT,
-  cName VARCHAR(45) NULL,
-  cAge INT NULL,
-  PRIMARY KEY (cID));
+  cid INT,
+  cname VARCHAR(45) NULL,
+  cage INT NULL,
+  PRIMARY KEY (cid));
 
 CREATE TABLE `order` (
-  oID INT,
-  cID INT,
-  oDate DATE NULL,
-  oTotalPrice INT NULL,
-  PRIMARY KEY (oID));
+  oid INT,
+  cid INT,
+  odate DATE NULL,
+  oprice INT NULL,
+  PRIMARY KEY (oid));
   
   CREATE TABLE orderdetail (
-  oID INT,
-  pID INT,
-  odQT VARCHAR(45) NULL,
-  PRIMARY KEY (oID, pID));
+  oid INT,
+  pid INT,
+  odqt VARCHAR(45) NULL,
+  PRIMARY KEY (oid, pid));
   
   CREATE TABLE product (
-  pID INT,
-  pName VARCHAR(45) NULL,
+  pid INT,
+  pname VARCHAR(45) NULL,
   pPrice VARCHAR(45) NULL,
-  PRIMARY KEY (pID));
+  PRIMARY KEY (pid));
 
-  ALTER TABLE `order` ADD FOREIGN KEY(cID) REFERENCES customer(cID);
-  ALTER TABLE orderdetail ADD FOREIGN KEY(oID) REFERENCES `order`(oID);
-  ALTER TABLE orderdetail ADD FOREIGN KEY(pID) REFERENCES product(pID);
+  ALTER TABLE `order` ADD FOREIGN KEY(cid) REFERENCES customer(cid);
+  ALTER TABLE orderdetail ADD FOREIGN KEY(oid) REFERENCES `order`(oid);
+  ALTER TABLE orderdetail ADD FOREIGN KEY(pid) REFERENCES product(pid);
 
 
