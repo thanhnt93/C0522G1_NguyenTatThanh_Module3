@@ -1,11 +1,13 @@
 -- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
 SET SQL_SAFE_UPDATES = 0;
-DELETE FROM nhan_vien
+
+-- DELETE FROM nhan_vien
+UPDATE nhan_vien SET trang_thai = 1
 WHERE ma_nhan_vien NOT IN (SELECT ma_nhan_vien
 						   FROM hop_dong 
 						   WHERE YEAR(ngay_lam_hop_dong) BETWEEN 2019 AND 2021
 						   GROUP BY ma_nhan_vien);
-			
+			SELECT ma_nhan_vien FROM nhan_vien WHERE trang_thai = 1;
 -- DELETE FROM nhan_vien
 -- WHERE ma_nhan_vien NOT IN (SELECT * FROM nhanvien);
 --        
@@ -33,23 +35,30 @@ WHERE ma_khach_hang IN ( SELECT * FROM ( SELECT kh.ma_khach_hang
 																									   INNER JOIN hop_dong_chi_tiet hdct ON hd.ma_hop_dong = hdct.ma_hop_dong
 																									   INNER JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
 																									   WHERE IFNULL((dv.chi_phi_thue + dvdk.gia * hdct.so_luong),0) > 1000000
-																									   GROUP BY kh.ma_khach_hang)) tb1);
-
+																									   GROUP BY kh.ma_khach_hang)) as tb1);
+select * from khach_hang;
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
-DELETE FROM khach_hang
+-- DELETE FROM khach_hang
+UPDATE khach_hang SET trang_thai = 1
 WHERE ma_khach_hang IN (SELECT * FROM ( SELECT kh.ma_khach_hang
 										FROM khach_hang kh
 										INNER JOIN hop_dong hd ON kh.ma_khach_hang = hd.ma_khach_hang
 										WHERE hd.ngay_lam_hop_dong < '2021-01-01') tb1);
-                                        
+ Select ma_khach_hang, trang_thai
+ from khach_hang
+ where trang_thai = 1;
+ select * from hop_dong_chi_tiet;
+ 
 -- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.                                        
 UPDATE dich_vu_di_kem
 SET gia = gia * 2  
-WHERE ma_dich_vu_di_kem IN ( SELECT * FROM ( SELECT dvdk.ma_dich_vu_di_kem 
+WHERE ma_dich_vu_di_kem IN ( SELECT * FROM ( SELECT dvdk.ma_dich_vu_di_kem
 											 FROM dich_vu_di_kem dvdk
 											 INNER JOIN hop_dong_chi_tiet hdct ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
 											 INNER JOIN hop_dong hd ON hdct.ma_hop_dong = hd.ma_hop_dong
-											 WHERE hdct.so_luong > 10 AND YEAR(hd.ngay_lam_hop_dong) = 2020) tb1);
+                                             WHERE YEAR(hd.ngay_lam_hop_dong) = 2020
+                                             GROUP BY dvdk.ma_dich_vu_di_kem
+											 HAVING SUM(hdct.so_luong) > 10 ) tb1);
 
 -- 20.	Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm id
 --  (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.

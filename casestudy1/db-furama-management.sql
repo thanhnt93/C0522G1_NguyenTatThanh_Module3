@@ -27,6 +27,7 @@ CREATE TABLE nhan_vien (
   ma_vi_tri INT,
   ma_trinh_do INT,
   ma_bo_phan INT,
+  trang_thai BIT DEFAULT 0,
   PRIMARY KEY (ma_nhan_vien));
   
   ALTER TABLE nhan_vien ADD FOREIGN KEY(ma_vi_tri) REFERENCES vi_tri(ma_vi_tri);
@@ -48,6 +49,7 @@ CREATE TABLE nhan_vien (
   so_dien_thoai VARCHAR(45) NULL,
   email VARCHAR(45) NULL,
   dia_chi VARCHAR(45) NULL,
+  trang_thai BIT DEFAULT 0,
   PRIMARY KEY (ma_khach_hang));
   
   ALTER TABLE khach_hang ADD FOREIGN KEY(ma_loai_khach) REFERENCES loai_khach(ma_loai_khach);
