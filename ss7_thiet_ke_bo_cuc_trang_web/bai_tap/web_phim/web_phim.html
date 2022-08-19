@@ -2,18 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Youtube</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div style="position: fixed; width: 100% ; top: 0; right: 0">
+<div style="position: fixed; width: 100% ; top: 0; right: 0; background-color: #e6f9ea">
     <div class="row">
-        <div class="logo-header col-12"><span>Phim</span>
-            <span class="logo">Hoạt Hình</span></div>
+        <div class="col-4">
+            <div>
+                <img style="width: 250px; transform: translateY(20%)"
+                     src="data:image/png;base64,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">
+            </div>
+        </div>
+        <div class="col-8">
+            <div>
+                <input type="text" placeholder="   Tìm kiếm"
+                       style="width: 450px; height: 40px; border-radius: 20px; font-size: 15px">
+            </div>
+        </div>
     </div>
-    <div class="row menu-header">
-        Phim hoạt hình | Phim Yêu Thích | Phim xem nhiều | Góp ý
+    <hr>
+    <div class="row menu-header" style="font-size: 15px; font-family: Arial, sans-serif;">
+        <a href="#">Tất cả</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="#">Phim hoạt hình</a> &nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp; <a
+            href="#">Phim Yêu Thích</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="#">Phim xem nhiều</a> &nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;
+        <a href="#">Mới xem gần đây</a>
     </div>
+    <hr>
 </div>
 
 <div class="row">
@@ -21,67 +37,94 @@
         <div class="col-4">
             <div class="row">
                 <div class="col-12">
-                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/wyHoewGBSis"
-                            title="Doraemon tập chào mừng đến với khách sạn nobi"
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/WIxkKExpu94"
+                            title="[Genshin Impact] Video giới thiệu phiên bản 3.0: Bình Minh Của Ngàn Đóa Hồng"
+                            frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                    <p><b> Doraemon tập chào mừng đến với khách sạn nobi </b></p>
+                    <p><b>[Genshin Impact] Video giới thiệu phiên bản 3.0: Bình Minh Của Ngàn Đóa Hồng</b></p>
+                    <p>3.041.605 lượt xem 13 thg 8, 2022</p>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-12">
-                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/CX93hb1128E"
-                            title="[S9] Doraemon - Tập 431 - Nón Tạo Cơ Hội - Con Đường Hạnh Phúc -Lồng Tiếng Việt"
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/VbFZvVeY0LY"
+                            title="[Genshin Impact] Video giới thiệu phiên bản 2.7: Ảo Mộng Nơi Đáy Vực" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                    <p><b> Tập 431 - Nón Tạo Cơ Hội - Con Đường Hạnh Phúc -Lồng Tiếng Việt </b></p>
+                    <p><b>[Genshin Impact] Video giới thiệu phiên bản 2.7: Ảo Mộng Nơi Đáy Vực</b></p>
+                    <p>3.264.611 lượt xem 20 thg 5, 2022</p>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-12">
-                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/LejCsxEmfCM"
-                            title="[S6] Doraemon Tập 270 - Làm Chủ Cơn Đói, Chiếc Nhẫn Kim Cương Của Mẹ - Hoạt Hình Tiếng Việt Mới Nhất"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    <p><b> Tập 270 - Làm Chủ Cơn Đói, Chiếc Nhẫn Kim Cương Của Mẹ - Hoạt Hình Tiếng Việt Mới Nhất </b>
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/C24nvloZZhE"
+                            title="Hoạt cảnh Genshin Impact  Lộ Trình Nguy Hiểm
+                     - Khoảnh Khắc Sinh Tử" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p><b> Hoạt cảnh Genshin Impact "Lộ Trình Nguy Hiểm" - Khoảnh Khắc Sinh Tử</b>
                     </p>
+                    <p>1.579.501 lượt xem 5 thg 6, 2022</p>
                 </div>
             </div>
         </div>
         <div class="col-8">
             <div class="row">
                 <div class="col-12">
-                    <iframe width="100%" height="480" src="https://www.youtube.com/embed/LejCsxEmfCM"
-                            title="Review Phim Doraemon ll Tớ Là Mari-Chan , Gậy Dịch Chuyển Dấy Vết , Đề Can Anh Em"
+                    <iframe width="900" height="506" src="https://www.youtube.com/embed/TmaAOV4SJNQ"
+                            title="[Genshin Impact - Chương Teyvat] - Vở Kịch Đêm Đông" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                    <h3>Tác giả</h3>
+                    <h2>[Genshin Impact - Chương Teyvat] - Vở Kịch Đêm Đông</h2>
+                    <h3>11.035.215 lượt xem 11 thg 7, 2022</h3>
+                    <hr>
 
-                    <p>
-                        Cậu bạn Nobita cùng chú mèo máy Doremon rất hâm mộ cô ca sĩ trẻ Mari với ngoại hình xinh xắn và
-                        giọng hát rất hay. Biết tin Mari có buổi ghi hình ở công viên gần nhà Nobita nên cậu bạn cùng
-                        mọi người nhanh chóng chạy ra để được tận mắt trông thấy thần tượng của mình. Nhưng tự dưng cô
-                        ca sĩ này biến mất làm mọi người hoảng hốt đi tìm. Mari trốn trong một cái thùng để tranh thủ
-                        được ngủ bởi công việc của cô quá nhiều khiến cô thấy mệt mỏi. Nobita mời Mari về nhà mình chơi
-                        và thể hiện mong ước được như cô. Nhưng Mari thì ngược lại, cô hy vọng mình có cuộc sống bình dị
-                        như nobita. Vậy là giữa Mari và Nobita đã có sự hoán đổi linh hồn bằng chiếc gậy hoán đổi để
-                        giúp Mari có thời gian được nghỉ ngơi. Mọi người cứ tưởng Nobita là Mari nên lúc nào cũng bủa
-                        vây lấy cậu, không những thế Nobita còn phải thay Mari làm tất cả những công việc đã được lên kế
-                        hoạch sẵn trong một ngày. Lúc này Nobita mới hiểu sự vất vả của ca sĩ và muốn trở lại là mình
-                        như xưa. Doremon đến cứu cậu và hoán đổi cậu với mẹ của Mari. Trong hình dáng của Mari, bà cũng
-                        phải làm hết những công việc mà con gái mình phải làm và cũng dần hiểu ra sự mệt mỏi của đứa
-                        con.
+                    <span>
+                        Kể từ lần triệu tập toàn bộ Quan Chấp Hành Fatui trước đó đến nay, cũng không biết là đã qua bao
+                        lâu. </span><br>
+                    <span>Trong đêm đông, đám người đeo mặt nạ hát hò, huyên náo, rồi sau đó lại lặng lẽ than khóc.</span><br>
+                    <span>Lúc này, bầu không khí trong điện mới hòa cùng bầu trời đông làm một, trở lại sự yên ắng như kéo dài đến vô tận.</span><br>
+                    <span>Mà ở một nơi xa xôi như Sumeru, Collei dường như đã rất lâu rồi không nằm mơ, trong lúc nghỉ trưa bỗng lại nhìn thấy những khung cảnh kỳ lạ...</span><br>
+                    <span>Quan Thống Lĩnh Fatui "The Jester" Pierro - Richard Tatum</span><br>
+                    <span>Quan Chấp Hành Fatui "Damselette" Columbina - Emi Lo</span><br>
+                    <span>Quan Chấp Hành Fatui "The Rooster" Pulcinella - Dave B. Mitchell</span><br>
+                    <span>Quan Chấp Hành Fatui "Regrator" Pantalone - J. Michael Tatum</span><br>
+                    <span>Quan Chấp Hành Fatui "The Knave" Arlecchino - Erin Yvette</span><br>
+                    <span>Quan Chấp Hành Fatui "Childe" Tartaglia - Griffin Burns</span><br>
+                    <span>Quan Chấp Hành Fatui "Marionette" Sandrone - Deneen Melody</span><br>
+                    <span>Quan Chấp Hành Fatui "The Captain" Il Capitano - Chris Tergliafera</span><br>
+                    <span>Quan Chấp Hành Fatui - "The Doctor" Il Dottore - Mick Wingert</span><br>
+                    <span>Collei - Christina Costello</span><br>
+                    <span>Tighnari - Elliot Gindi</span><br><br>
+
+                    <span>TẢI MIỄN PHÍ: <a
+                            href="https://genshin.hoyoverse.com/vi">https://genshin.hoyoverse.com/vi</a></span><br><br>
 
 
-                        Làm người nổi tiếng thật không hề dễ dàng như mọi người vẫn hình dung. Hy vọng, câu chuyện sẽ
-                        giúp mọi người có sự đồng cảm với những vất vả của họ. Đón đọc truyện doremon màu, truyện
-                        doremon chế...trên doctruyendoremon.vn.
+                    <span><a href="https://www.youtube.com/hashtag/genshinimpact">#GenshinImpact</a>  <a
+                            href="https://www.youtube.com/hashtag/hoyoverse">#HoYoverse</a></span><br><br>
+
+                    <span>Theo dõi để biết thêm nhiều thông tin về Genshin Impact:</span><br>
+                    <span>◆Trang chủ: <a
+                            href="https://genshin.hoyoverse.com/vi">https://genshin.hoyoverse.com/vi</a></span><br>
+
+                    <span>◆Facebook: <a href="https://www.facebook.com/GenshinImpact.vi/">https://www.facebook.com/GenshinImpac...</a></span><br>
+
+                    <span>◆Instagram: <a href="https://www.instagram.com/GenshinImpact/">https://www.instagram.com/GenshinImpact/</a></span><br>
+
+                    <span>◆Twitter:  <a
+                            href="https://twitter.com/GenshinImpact">https://twitter.com/GenshinImpact</a></span><br>
+
+                    <span>◆Diễn Đàn Chính Thức:  <a href="https://www.hoyolab.com/genshin/">https://www.hoyolab.com/genshin/</a></span><br>
+
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+<footer style="text-align: center"><b>Maky by Nguyen Tat Thanh @</b></footer>
 </body>
 </html>
