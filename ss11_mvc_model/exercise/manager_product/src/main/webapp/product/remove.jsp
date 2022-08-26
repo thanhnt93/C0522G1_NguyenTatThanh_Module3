@@ -18,7 +18,7 @@
             font-family: Arial, sans-serif
         }
 
-        a{
+        a {
             text-decoration: none;
         }
 
@@ -39,23 +39,23 @@
         <legend>Thông tin sản phẩm</legend>
         <table>
             <tr>
-                <td>Mã sản phẩm: </td>
+                <td>Mã sản phẩm:</td>
                 <td>${product.getId()}</td>
             </tr>
             <tr>
-                <td>Tên sản phẩm: </td>
+                <td>Tên sản phẩm:</td>
                 <td>${product.getName()}</td>
             </tr>
             <tr>
-                <td>Giá tiền: </td>
+                <td>Giá tiền:</td>
                 <td>${product.getPrice()}</td>
             </tr>
             <tr>
-                <td>Mô tả: </td>
+                <td>Mô tả:</td>
                 <td>${product.getDescribe()}</td>
             </tr>
             <tr>
-                <td>Hãng sản xuất: </td>
+                <td>Hãng sản xuất:</td>
                 <td>${product.getProducer()}</td>
             </tr>
             <tr>
