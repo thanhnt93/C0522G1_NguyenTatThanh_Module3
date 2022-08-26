@@ -1,5 +1,6 @@
 package service;
 
+import dto.UsersDto;
 import model.User;
 
 import java.sql.SQLException;
@@ -18,4 +19,6 @@ public interface IUserService {
     List<User> sortByNameAsc();
     List<User> sortByNameDesc();
     List<User> searchByCountry(String countrySearch);
+
+    List<UsersDto> selectJoinUsers();
 }

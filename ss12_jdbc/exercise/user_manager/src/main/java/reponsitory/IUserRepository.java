@@ -1,5 +1,6 @@
 package reponsitory;
 
+import dto.UsersDto;
 import model.User;
 
 import java.sql.SQLException;
@@ -19,4 +20,7 @@ public interface IUserRepository {
     List<User> sortByNameDesc();
     List<User> sortByName();
     List<User> searchByCountry(String countrySearch);
+
+    List<UsersDto> selectJoinUsers();
+
 }

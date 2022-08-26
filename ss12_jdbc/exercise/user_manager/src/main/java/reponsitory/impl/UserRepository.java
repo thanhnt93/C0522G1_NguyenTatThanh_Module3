@@ -1,5 +1,6 @@
 package reponsitory.impl;
 
+import dto.UsersDto;
 import model.User;
 import reponsitory.IUserRepository;
 
@@ -12,6 +13,7 @@ public class UserRepository implements IUserRepository {
     private String jdbcUsername = "root";
     private String jdbcPassword = "nguyentatthanh12";
     static List<User> listUser = new ArrayList<>();
+    static List<UsersDto> listUserDto = new ArrayList<>();
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users (name, email, country) VALUES (?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
@@ -21,6 +23,10 @@ public class UserRepository implements IUserRepository {
     private static final String SEARCH_BY_COUNTRY = " select * from users where country like ? ";
     private static final String SORT_BY_NAME_ASC = " select * from users order by name ";
     private static final String SORT_BY_NAME_DESC = " select * from users order by name DESC ";
+    private static final String SELECT_JOIN_USER_DTO = "SELECT u.name, u.email, u.country, c.cmnd\n" +
+            "FROM users u\n" +
+            "LEFT JOIN cmnd c ON u.id = c.id;";
+
 
     public UserRepository() {
     }
@@ -108,6 +114,34 @@ public class UserRepository implements IUserRepository {
         }
 
         return listUser;
+    }
+
+    @Override
+    public List<UsersDto> selectJoinUsers() {
+        listUserDto.clear();
+        // using try-with-resources to avoid closing resources (boiler plate code)
+
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_JOIN_USER_DTO);) {
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                int cmnd = rs.getInt("cmnd");
+                listUserDto.add(new UsersDto(name, email, country, cmnd));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return listUserDto;
     }
 
 

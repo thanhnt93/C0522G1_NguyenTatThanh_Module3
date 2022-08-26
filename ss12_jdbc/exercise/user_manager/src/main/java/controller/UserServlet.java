@@ -1,6 +1,7 @@
 package controller;
 
 
+import dto.UsersDto;
 import model.User;
 import service.IUserService;
 import service.impl.UserService;
@@ -97,6 +98,9 @@ public class UserServlet extends HttpServlet {
                 case "DESC":
                     sortByNameDesc(request,response);
                     break;
+                case "userDto":
+                    listUserDto(request,response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -105,6 +109,14 @@ public class UserServlet extends HttpServlet {
             throw new ServletException(ex);
         }
 
+    }
+
+    private void listUserDto(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+        List<UsersDto> listUserDto = useRepository.selectJoinUsers();
+        request.setAttribute("listUserDto", listUserDto);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/listUserDto.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void sortByNameAsc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,5 +1,6 @@
 package service.impl;
 
+import dto.UsersDto;
 import model.User;
 import reponsitory.IUserRepository;
 import reponsitory.impl.UserRepository;
@@ -50,5 +51,10 @@ public class UserService implements IUserService {
     @Override
     public List<User> searchByCountry(String countrySearch) {
         return userRepository.searchByCountry(countrySearch);
+    }
+
+    @Override
+    public List<UsersDto> selectJoinUsers() {
+        return userRepository.selectJoinUsers();
     }
 }

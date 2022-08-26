@@ -36,7 +36,7 @@
 <center>
     <h3>Thông tin người dùng</h3>
     <h6>
-        <a href="user?action=user">Về trang người dùng</a>
+        <a href="user?action=user"> <i class="fa-solid fa-arrow-left-long"></i>Về trang người dùng</a>
     </h6>
 </center>
 <div align="center">
@@ -77,5 +77,6 @@
         </table>
     </form>
 </div>
+<footer style="text-align: center">--- Admin Nguyen Tat Thanh ---</footer>
 </body>
 </html>
