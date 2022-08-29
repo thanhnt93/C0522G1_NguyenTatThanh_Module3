@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository implements IUserRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/demo";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "nguyentatthanh12";
     static List<User> listUser = new ArrayList<>();
     static List<UsersDto> listUserDto = new ArrayList<>();
 
@@ -36,7 +33,7 @@ public class UserRepository implements IUserRepository {
 
         listUser.clear();
 
-        try (Connection connection = getConnection();
+        try (Connection connection = BaseRepository.getConnectDB();
 
              PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY_NAME_ASC);) {
             System.out.println(preparedStatement);
@@ -60,7 +57,7 @@ public class UserRepository implements IUserRepository {
     public List<User> sortByNameDesc() {
         listUser.clear();
 
-        try (Connection connection = getConnection();
+        try (Connection connection = BaseRepository.getConnectDB();
 
              PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY_NAME_DESC);) {
             System.out.println(preparedStatement);
@@ -92,7 +89,7 @@ public class UserRepository implements IUserRepository {
     public List<User> searchByCountry(String countrySearch) {
         listUser.clear();
         try {
-            Connection connection = new UserRepository().getConnection();
+            Connection connection = BaseRepository.getConnectDB();
 
             PreparedStatement preparedStatement =
                     connection.prepareStatement(SEARCH_BY_COUNTRY);
@@ -122,7 +119,7 @@ public class UserRepository implements IUserRepository {
         // using try-with-resources to avoid closing resources (boiler plate code)
 
         // Step 1: Establishing a Connection
-        try (Connection connection = getConnection();
+        try (Connection connection = BaseRepository.getConnectDB();
 
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_JOIN_USER_DTO);) {
@@ -144,28 +141,12 @@ public class UserRepository implements IUserRepository {
         return listUserDto;
     }
 
-
-    protected Connection getConnection() {
-        Connection connection = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
     @Override
     public void insertUser(User user) throws SQLException {
         listUser.clear();
         System.out.println(INSERT_USERS_SQL);
         // try-with-resource statement will auto close the connection.
-        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+        try (Connection connection = BaseRepository.getConnectDB(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
@@ -197,7 +178,7 @@ public class UserRepository implements IUserRepository {
         listUser.clear();
         User user = null;
         // Step 1: Establishing a Connection
-        try (Connection connection = getConnection();
+        try (Connection connection = BaseRepository.getConnectDB();
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
             preparedStatement.setInt(1, id);
@@ -224,7 +205,7 @@ public class UserRepository implements IUserRepository {
         // using try-with-resources to avoid closing resources (boiler plate code)
 
         // Step 1: Establishing a Connection
-        try (Connection connection = getConnection();
+        try (Connection connection = BaseRepository.getConnectDB();
 
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
@@ -249,7 +230,7 @@ public class UserRepository implements IUserRepository {
     @Override
     public boolean deleteUser(int id) throws SQLException {
         boolean rowDeleted;
-        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL);) {
+        try (Connection connection = BaseRepository.getConnectDB(); PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL);) {
             statement.setInt(1, id);
             rowDeleted = statement.executeUpdate() > 0;
         }
@@ -260,7 +241,7 @@ public class UserRepository implements IUserRepository {
     public boolean updateUser(User user) throws SQLException {
         listUser.clear();
         boolean rowUpdated;
-        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
+        try (Connection connection = BaseRepository.getConnectDB(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getCountry());
