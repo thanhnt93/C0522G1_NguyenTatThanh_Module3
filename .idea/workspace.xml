@@ -5,15 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a44086-629c-4cb2-a38f-ddd57c921ed7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/src/main/java/reponsitory/impl/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy2/src/main/java/controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy2/src/main/java/repository/ICustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy2/src/main/java/repository/customer/CustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy2/src/main/java/service/ICustomerTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy2/src/main/java/service/customer/CustomerTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy2/src/main/webapp/customer/edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/classes/java/main/controller/FuramaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/classes/java/main/controller/FuramaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/classes/java/main/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/classes/java/main/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/ICustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/ICustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/IEmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/IEmployeeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/customer/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/customer/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/employee/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/classes/java/main/repository/employee/EmployeeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/libs/casestudy2-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/libs/casestudy2-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/db_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/db_furama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/insert_db_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/insert_db_furama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/controller/FuramaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/controller/FuramaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/repository/IEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/repository/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/repository/customer/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/repository/employee/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/repository/employee/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/service/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/service/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/java/service/employee/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/java/service/employee/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/webapp/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/webapp/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy2/src/main/webapp/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/webapp/customer/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/casestudy2/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy2/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/build/libs/product_manager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/exercise/manager_product/build/libs/product_manager-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
@@ -31,17 +57,16 @@
       <change beforePath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer/jwbd-customer-management/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/build/classes/java/main/reponsitory/impl/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/build/classes/java/main/reponsitory/impl/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/build/libs/user_manager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/build/libs/user_manager-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/src/main/java/reponsitory/impl/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc/exercise/user_manager/src/main/java/reponsitory/impl/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/temp/safeToDelete.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/reponsitory/impl/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/reponsitory/impl/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/controller/FuramaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/controller/FuramaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/ICustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/ICustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/IEmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/IEmployeeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/customer/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/customer/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/employee/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/WEB-INF/classes/repository/employee/EmployeeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat/apache-tomcat-9.0.65/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web.html" beforeDir="false" afterPath="$PROJECT_DIR$/web.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,16 +104,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ss11_mvc_model/practice/manager_customer" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -203,6 +228,8 @@
       <workItem from="1661392144469" duration="72000" />
       <workItem from="1661470733191" duration="242000" />
       <workItem from="1661737238219" duration="950000" />
+      <workItem from="1661781644341" duration="33000" />
+      <workItem from="1661824992234" duration="2106000" />
     </task>
     <servers />
   </component>

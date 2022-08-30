@@ -1,6 +1,7 @@
 package service.employee;
 
-import repository.IEmployeeRepository;
 
-public class EmployeeService implements IEmployeeRepository {
+import service.IEmployeeService;
+
+public class EmployeeService implements IEmployeeService {
 }

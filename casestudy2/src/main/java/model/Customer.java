@@ -10,15 +10,58 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String address;
+    private int isDelete;
 
     public Customer() {
     }
 
+    public int getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(int isDelete) {
+        this.isDelete = isDelete;
+    }
+
     public Customer(int id, int customerTypeId, String name,
                     String dateOfBirth, int gender, String idCard,
-                    String phoneNumber, String email, String address) {
+                    String phoneNumber, String email, String address, int isDelete) {
         this.id = id;
         this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.isDelete = isDelete;
+    }
+
+    public Customer(int id, int customerTypeId, String name, String dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
+        this.id = id;
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer(int customerTypeId, String name, String dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer(String name, String dateOfBirth, int gender, String idCard, String phoneNumber, String email, String address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;

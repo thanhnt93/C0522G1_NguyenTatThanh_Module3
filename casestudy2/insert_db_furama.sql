@@ -53,18 +53,18 @@ INSERT INTO customer_type (id, name) VALUES ('3', 'Gold');
 INSERT INTO customer_type (id, name) VALUES ('4', 'Silver');
 INSERT INTO customer_type (id, name) VALUES ('5 ', 'Member');
 
-INSERT INTO customer (customer_type_id, name, gender, date_of_birth, id_card, salary, phone_number, email, address)
+INSERT INTO customer (customer_type_id, name, gender, date_of_birth, id_card, phone_number, email, address)
 VALUES 
-(2, 'Nguyễn Tất Thành', 1, '2000-12-24', 1233332233, 5000000, 012345678, 'thanhnt@gmail.com', 'Quảng Nam'),
-(1, 'Bùi Hùng', 1, '2000-11-12', 1233343233, 7000000, 012333678, 'hungb@gmail.com', 'Đà Nẵng'),
-(5, 'Hà Bảo Ân', 1, '2000-11-12', 1233111233, 4000000, 012567678, 'anhb@gmail.com', 'Huế'),
-(3, 'Nguyễn Tấn Huân', 1, '2000-9-12', 1233345233, 8000000, 023445678, 'huannt@gmail.com', 'Quảng Ngãi'),
-(2, 'Phan Phước Đại', 1, '2000-11-12', 1233888233, 4000000, 014745678, 'daipp@gmail.com', 'Quảng Trị'),
-(3, 'Nguyễn Văn Phức', 1, '2000-4-12', 1233321233, 6000000, 012347678, 'phucnv@gmail.com', 'Đà Nẵng'),
-(4, 'Trần Đặng Quang Anh', 1, '2000-2-12', 1233445233, 4000000, 012323678, 'anhtdq@gmail.com', 'Quãng Ngãi'),
-(5, 'Võ Văn Tý', 1, '2000-4-12', 123399233, 20000000, 012233378, 'tyvv@gmail.com', 'Quảng Nam'),
-(1, 'Đặng Ngọc Huy', 1, '2000-2-12', 1233387233, 10000000, 015555678, 'huydn@gmail.com', 'Quảng Nam'),
-(2, 'Đặng Thị Thủy Tiên', 1, '2000-2-12', 1232337233, 7000000, 013355678, 'tiendtt@gmail.com', 'Quảng Nam');
+(2, 'Nguyễn Tất Thành', 1, '2000-12-24', '1233332233', '012345678', 'thanhnt@gmail.com', 'Quảng Nam'),
+(1, 'Bùi Hùng', 1, '2000-11-12', '1233343233', '012333678', 'hungb@gmail.com', 'Đà Nẵng'),
+(5, 'Hà Bảo Ân', 1, '2000-11-12', '1233111233', '012567678', 'anhb@gmail.com', 'Huế'),
+(3, 'Nguyễn Tấn Huân', 1, '2000-9-12', '1233345233', '023445678', 'huannt@gmail.com', 'Quảng Ngãi'),
+(2, 'Phan Phước Đại', 1, '2000-11-12', '1233888233', '014745678', 'daipp@gmail.com', 'Quảng Trị'),
+(3, 'Nguyễn Văn Phức', 1, '2000-4-12', '1233321233', '012347678', 'phucnv@gmail.com', 'Đà Nẵng'),
+(4, 'Trần Đặng Quang Anh', 1, '2000-2-12', '1233445233', '012323678', 'anhtdq@gmail.com', 'Quãng Ngãi'),
+(5, 'Võ Văn Tý', 1, '2000-4-12', '123399233', '012233378', 'tyvv@gmail.com', 'Quảng Nam'),
+(1, 'Đặng Ngọc Huy', 1, '2000-2-12', '1233387233', '015555678', 'huydn@gmail.com', 'Quảng Nam'),
+(2, 'Đặng Thị Thủy Tiên', 1, '2000-2-12', '1232337233', '013355678', 'tiendtt@gmail.com', 'Quảng Nam');
 
 
 INSERT INTO facility_type (name) VALUES ('Villa');

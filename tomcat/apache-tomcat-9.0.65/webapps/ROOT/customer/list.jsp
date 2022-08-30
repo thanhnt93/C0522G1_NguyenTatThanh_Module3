@@ -47,16 +47,12 @@
 <body>
 <center>
     <h3>Danh sách khách hàng</h3>
-
+    <a href="/">Trở về trang chủ</a>
     <form action="/customer?action=search">
-        <input type="text" name="customerSearch" placeholder="Nhập tên khách hàng cần tìm kiếm">
+        <input type="text" name="customerSearch" placeholder="Nhập tên khách hàng" style="width: 500px">
         <input type="submit" name="action" value="search">
 
     </form>
-    <%--    <form action="/user?action=sort" class="d-flex justify-conten-end" style="margin-left: 20px">--%>
-    <%--        <input type="submit" name="action" value="ASC">--%>
-    <%--        <input type="submit" name="action" value="DESC">--%>
-    <%--    </form>--%>
 
     <c:if test=" ${mess != null}">
         <span>${mess}</span>
@@ -69,41 +65,59 @@
 
         <tr>
             <th>Tên khách hàng</th>
-            <th>Ngày sinh</th>
             <th>Giới tính</th>
+            <th>Ngày sinh</th>
             <th>ID card</th>
             <th>Số điện thoại</th>
             <th>Email</th>
             <th>Địa chỉ</th>
-            <%--            <th>Actions</th>--%>
+            <th>Actions</th>
+            <th>Actions</th>
 
         </tr>
-        <c:forEach var="user" items="${listUser}">
+        <c:forEach var="customer" items="${customerList}">
             <tr>
-                    <%--                <td><c:out value="${user.id}"/></td>--%>
-                <td><c:out value="${user.name}"/></td>
-                <td><c:out value="${user.email}"/></td>
-                <td><c:out value="${user.country}"/></td>
-                <td>
-                    <a href="/user?action=edit&id=${user.id}"><i class="fa-solid fa-pen-to-square"></i></a>
-                </td>
-                    <%--                <td>--%>
-                    <%--                    <a href="/user?action=delete&id=${user.id}"><i class="fa-solid fa-trash-can"></i></a>--%>
-                    <%--                </td>--%>
-                <td>
-                    <button onclick="objdelete('${user.id}' ,'${user.name}')"
-                            data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-                    </button>
+<%--                <td><c:out value="${customer.id}"/></td>--%>
+<%--                <c:forEach var="customerType" items="${customerTypeList}">--%>
+<%--                    <c:if test="${customerType.id == customer.customerTypeId}">--%>
+<%--                        <td><c:out value="${customerType.name}"/></td>--%>
+<%--                    </c:if>--%>
+<%--                </c:forEach>--%>
+                <c:if test="${customer.isDelete == 0}">
+                <td><c:out value="${customer.name}"/></td>
+                    <c:if test="${customer.gender == 1}">
+                       <td>Nam</td>
+                    </c:if>
+                    <c:if test="${customer.gender == 0}">
+                        <td>Nữ</td>
+                    </c:if>
+<%--                <td><c:out value="${customer.gender}"/></td>--%>
+                <td><c:out value="${customer.dateOfBirth}"/></td>
+                <td><c:out value="${customer.idCard}"/></td>
+                <td><c:out value="${customer.phoneNumber}"/></td>
+                <td><c:out value="${customer.email}"/></td>
+                <td><c:out value="${customer.address}"/></td>
 
+                <td>
+                    <a href="/customer?action=edit&id=${customer.id}"><i class="fa-solid fa-file-pen"></i></a>
                 </td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            onclick="objdelete('${customer.id}' ,'${customer.name}')"
+                            data-bs-target="#exampleModal" >
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </td>
+                </c:if>
             </tr>
         </c:forEach>
     </table>
 </div>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="/user" method="post">
+        <form action="/customer " method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
@@ -113,16 +127,22 @@
                     <input type="text" hidden name="id" id="idDelete">
                     <input type="text" hidden name="action" value="delete">
                     <span> Bạn có muốn xóa : </span>
-                    <span id="nameDelete">  </span>
+                    <span id="nameDelete"> </span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                    <button type="submit" class="btn btn-primary">Có</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<script>
+    function objdelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

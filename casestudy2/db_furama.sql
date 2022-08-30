@@ -81,11 +81,10 @@ CREATE TABLE IF NOT EXISTS customer (
     `name` VARCHAR(50) NOT NULL,
     gender BIT(1) NOT NULL,
     date_of_birth DATE NOT NULL,
-    id_card VARCHAR(12) NOT NULL UNIQUE,
-    salary DOUBLE NOT NULL CHECK (salary >= 3000000),
-    phone_number VARCHAR(12) NOT NULL,
+    id_card VARCHAR(50) NOT NULL UNIQUE,
+    phone_number VARCHAR(50) NOT NULL,
     email VARCHAR(45),
-    address VARCHAR(50),
+    address VARCHAR(120),
     is_delete BIT DEFAULT 0
 );
 

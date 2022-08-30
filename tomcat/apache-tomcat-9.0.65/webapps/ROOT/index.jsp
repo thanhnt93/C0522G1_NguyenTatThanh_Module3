@@ -82,9 +82,8 @@
                 </button>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickable">
-                <li><a class="dropdown-item" href="customer/list.jsp">List of employee</a></li>
-                <li><a class="dropdown-item" href="#">Add new customers</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="/customer">List of employee</a></li>
+                <li><a class="dropdown-item" href="/customer?action=create">Add new customers</a></li>
             </ul>
 
         </div>
@@ -130,6 +129,11 @@
 <%--                    title="Biệt thự nghỉ dưỡng FURAMA RESORT DANANG - Ngũ Hành Sơn, Đà Nẵng" frameborder="0"--%>
 <%--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"--%>
 <%--                    allowfullscreen></iframe>--%>
+<%--            <video class="img-fluid" autoplay muted>--%>
+<%--                <source type="video/mp4"--%>
+<%--                        src="https://eus-streaming-video-rt-microsoft-com.akamaized.net/bd1eda48-4f5b-42f7-9ffd-bf10c7593861/3b66781f-b1b7-41ec-84ff-abbc209f2520.mp4">--%>
+<%--            </video>--%>
+        <img style="width: 100%; height: 100%" src="https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior-Furama-girl-with-pink-hat.jpg">
 <%--    <%@include file="customer/list.jsp" %>--%>
         </div>
 
