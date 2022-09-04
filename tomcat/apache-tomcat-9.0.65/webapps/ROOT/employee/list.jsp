@@ -47,8 +47,8 @@
 <body>
 <center>
     <h3>Danh sách nhân viên</h3>
-
-    <form action="/customer?action=search">
+    <a href="/">Trở về trang chủ</a>
+    <form action="/employee?action=search">
         <input type="text" name="customerSearch" placeholder="Nhập tên nhân viên cần tìm kiếm">
         <input type="submit" name="action" value="search">
 
@@ -75,54 +75,90 @@
             <th>Số điện thoại</th>
             <th>Email</th>
             <th>Địa chỉ</th>
-            <%--            <th>Actions</th>--%>
-
+            <th>Vị trí</th>
+            <th>Chức vụ</th>
+            <th>Bộ phận</th>
+            <th>UserName</th>
+            <th>Actions</th>
+            <th>Actions</th>
         </tr>
-        <c:forEach var="user" items="${listUser}">
+        <c:forEach var="employee" items="${employeeList}">
             <tr>
-                    <%--                <td><c:out value="${user.id}"/></td>--%>
-                <td><c:out value="${user.name}"/></td>
-                <td><c:out value="${user.email}"/></td>
-                <td><c:out value="${user.country}"/></td>
-                <td>
-                    <a href="/user?action=edit&id=${user.id}"><i class="fa-solid fa-pen-to-square"></i></a>
-                </td>
-                    <%--                <td>--%>
-                    <%--                    <a href="/user?action=delete&id=${user.id}"><i class="fa-solid fa-trash-can"></i></a>--%>
-                    <%--                </td>--%>
-                <td>
-                    <button onclick="objdelete('${user.id}' ,'${user.name}')"
-                            data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-                    </button>
+                <c:if test="${employee.isDelete == 0}">
+                    <%--                <td><c:out value="${employee.id}"/></td>--%>
+                    <td><c:out value="${employee.name}"/></td>
+                    <td><c:out value="${employee.dateOfBirth}"/></td>
+                    <td><c:out value="${employee.idCard}"/></td>
+                    <td><c:out value="${employee.salary}"/></td>
+                    <td><c:out value="${employee.phoneNumber}"/></td>
+                    <td><c:out value="${employee.email}"/></td>
+                    <td><c:out value="${employee.address}"/></td>
+                    <c:forEach var="position" items="${positionList}">
+                        <c:if test="${position.id == employee.positionId}">
+                            <td><c:out value="${position.name}"/></td>
+                        </c:if>
+                    </c:forEach>
 
-                </td>
+                    <c:forEach var="educationDegree" items="${educationDegreeList}">
+                        <c:if test="${educationDegree.id == employee.educationDegreeId}">
+                            <td><c:out value="${educationDegree.name}"/></td>
+                        </c:if>
+                    </c:forEach>
+                    <c:forEach var="division" items="${divisionList}">
+                        <c:if test="${division.id == employee.divisionId}">
+                            <td><c:out value="${division.name}"/></td>
+                        </c:if>
+                    </c:forEach>
+
+                    <c:forEach var="user" items="${userList}">
+                        <c:if test="${user.userName == employee.userName}">
+                            <td><c:out value="${user.userName}"/></td>
+                        </c:if>
+                    </c:forEach>
+                    <td>
+                        <a href="/employee?action=edit&id=${employee.id}">Edit</a>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                onclick="objdelete('${employee.id}' ,'${employee.name}')"
+                                data-bs-target="#exampleModal">
+                            Delete
+                        </button>
+                    </td>
+                </c:if>
             </tr>
         </c:forEach>
     </table>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="/user" method="post">
+        <form action="/employee " method="post">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">thong bao</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="text" hidden name="id" id="idDelete">
                     <input type="text" hidden name="action" value="delete">
-                    <span> Bạn có muốn xóa : </span>
+                    <span> ban co muon xoa : </span>
                     <span id="nameDelete">  </span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                    <button type="submit" class="btn btn-primary">Có</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<script>
+    function objdelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

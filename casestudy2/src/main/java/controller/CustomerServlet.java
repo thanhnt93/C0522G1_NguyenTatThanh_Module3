@@ -3,10 +3,10 @@ package controller;
 import model.Customer;
 import model.CustomerType;
 import repository.customer.ICustomerRepository;
-import service.ICustomerService;
-import service.ICustomerTypeService;
-import service.customer.CustomerService;
-import service.customer.CustomerTypeService;
+import service.customer.ICustomerService;
+import service.customer.ICustomerTypeService;
+import service.customer.impl.CustomerService;
+import service.customer.impl.CustomerTypeService;
 
 
 import javax.servlet.RequestDispatcher;

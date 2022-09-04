@@ -100,7 +100,6 @@
 
                 <td>
                     <a href="/customer?action=edit&id=${customer.id}"><i class="fa-solid fa-file-pen"></i></a>
-                    <button type="button" class="btn btn-secondary"> </button>
                 </td>
                 <td>
                     <!-- Button trigger modal -->

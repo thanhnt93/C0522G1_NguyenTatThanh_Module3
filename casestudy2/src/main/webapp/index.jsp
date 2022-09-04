@@ -69,8 +69,8 @@
                 </button>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickable">
-                <li><a class="dropdown-item" href="employee/list.jsp">List of employee</a></li>
-                <li><a class="dropdown-item" href="employee/create.jsp">Add new staff</a></li>
+                <li><a class="dropdown-item" href="/employee">List of employee</a></li>
+                <li><a class="dropdown-item" href="/employee?action=create">Add new staff</a></li>
             </ul>
 
         </div>

@@ -13,8 +13,36 @@ public class Employee {
     private int educationDegreeId;
     private int divisionId;
     private String userName;
+    private int isDelete;
+
+    public int getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(int isDelete) {
+        this.isDelete = isDelete;
+    }
 
     public Employee() {
+    }
+
+    public Employee(int id, String name, String dateOfBirth, String idCard,
+                    double salary, String phoneNumber, String email,
+                    String address, int positionId, int educationDegreeId,
+                    int divisionId, String userName, int isDelete) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.positionId = positionId;
+        this.educationDegreeId = educationDegreeId;
+        this.divisionId = divisionId;
+        this.userName = userName;
+        this.isDelete = isDelete;
     }
 
     public Employee(int id, String name, String dateOfBirth, String idCard,
@@ -32,6 +60,34 @@ public class Employee {
         this.positionId = positionId;
         this.educationDegreeId = educationDegreeId;
         this.divisionId = divisionId;
+        this.userName = userName;
+    }
+
+    public Employee(String name, String dateOfBirth, String idCard,
+                    double salary, String phoneNumber, String email,
+                    String address, int positionId, int educationDegreeId,
+                    int divisionId, String userName) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.positionId = positionId;
+        this.educationDegreeId = educationDegreeId;
+        this.divisionId = divisionId;
+        this.userName = userName;
+    }
+
+    public Employee(String name, String dateOfBirth, String idCard, double salary, String phoneNumber, String email, String address, String userName) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
         this.userName = userName;
     }
 
